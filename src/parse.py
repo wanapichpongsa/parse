@@ -5,8 +5,8 @@ import pdfplumber
 from personal import data_tokens, page_data_breakpoints, user_data
 
 # Define directories
-input_dir = "./test/files"
-output_dir = "./test/output"
+input_dir = "../test/files"
+output_dir = "../test/output"
 os.makedirs(output_dir, exist_ok=True)
 
 # helper to clean relevant string
@@ -83,6 +83,7 @@ def parse_pdf(input_dir: str, output_dir: str) -> dict[str, str]:
             output[output_filename] = text
         except Exception as e:
             print(f"Error processing {filename}: {e}")
+            return {"error": str(e)}
             
     return output
 
@@ -108,6 +109,7 @@ def parse_pdf_binary(filename: str, bytes: bytes, output_dir: str) -> dict[str, 
         output[output_filename] = text
     except Exception as e:
         print(f"Error processing {filename}: {e}")
+        return {"error": str(e)}
             
     return output
 
@@ -115,5 +117,5 @@ def parse_pdf_binary(filename: str, bytes: bytes, output_dir: str) -> dict[str, 
 if __name__ == "__main__":
     pass
     # parse_pdf(input_dir, output_dir)
-    # with open("./test/files/name.pdf", "rb") as f:
+    # with open("../test/files/name.pdf", "rb") as f:
     #     parse_pdf_binary("name.pdf", f.read(), output_dir)

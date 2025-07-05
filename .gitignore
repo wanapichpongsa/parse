@@ -6,6 +6,6 @@ test/files/.gitkeep
 test/output/*
 test/output/.gitkeep
 
-__pycache__/*
+*/__pycache__/*
 
 personal.py
