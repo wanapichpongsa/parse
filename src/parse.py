@@ -4,6 +4,16 @@ import io
 import pdfplumber
 from personal import data_tokens, page_data_breakpoints, user_data
 
+"""
+TODO: Bank statements have summary:
+1. starting balance
+2. total outflow
+3. total inflow
+4. ending balance
+
+So we need to cross-reference the summary values with the sum of all row values.
+"""
+
 # Define directories
 input_dir = "../test/files"
 output_dir = "../test/output"
